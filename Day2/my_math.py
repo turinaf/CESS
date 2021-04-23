@@ -1,3 +1,4 @@
+import math
 def factorial(number):
     product = 1
     for i in range(1, number+1):
@@ -10,10 +11,13 @@ def recursive_factorial(number):
         return 1
     return number * recursive_factorial(number-1)
 
-def is_prime():
-    
+def is_prime(number):
+    for i in range(2, math.ceil(math.sqrt(number))):
+        if number % i== 0:
+            return False
+    return True
 
 
 if __name__ == '__main__': #Checking if the this file is being run from here
-    print(factorial(3))
-    print(recursive_factorial(3))
+    print(is_prime(19783))
+    # print(recursive_factorial(3))
